@@ -1,6 +1,6 @@
 #include <iostream>
 
-std::string FizzBuzz(int num) {
+std::string fizzBuzzSolver(int num) {
 	std::string out;
 	
 	if (num % 3 == 0) out += "Fizz";
@@ -10,7 +10,18 @@ std::string FizzBuzz(int num) {
 }
 
 int main() {
-	for (int i = 0; i < 100; i++) {
-		std::cout << i << ": " << FizzBuzz(i) << std::endl;
+	std::cout << "Welcome to the FizzBuzz solver" << std::endl;
+	
+	bool run = true;
+	while(run) {
+		int inp = 0;
+		std::cout << "Input an integer" << std::endl << "(type '-1' to terminate the program)" << std::endl;
+		std::cin >> inp;
+		
+		if (inp == -1) {
+			run = false;
+			break;
+		}
+		else std::cout << fizzBuzzSolver(inp) << std::endl << std::endl;
 	}
 }
